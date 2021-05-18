@@ -22,8 +22,7 @@ RUN addgroup --gid ${GROUP_ID} ${NAME}
 RUN adduser --disabled-password --gecos '' --uid ${USER_ID} --gid ${GROUP_ID} ${NAME}
 RUN usermod -aG sudo ${NAME} 
 
-RUN echo "ppeck   ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers 
-# RUN sed '27i\\nppeck   ALL=(ALL) NOPASSWD:ALL' /etc/sudoers
+RUN sed -i '27i\\nppeck   ALL=(ALL) NOPASSWD:ALL' /etc/sudoers
 
 USER ${NAME}
 
