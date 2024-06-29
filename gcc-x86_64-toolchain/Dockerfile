@@ -17,7 +17,8 @@ RUN apt-get install -y \
         zsh \
         sudo \
         fonts-powerline \
-        language-pack-en
+        language-pack-en \
+	cpio
 
 RUN addgroup --gid ${GROUP_ID} ${NAME}
 RUN adduser --disabled-password --gecos '' --uid ${USER_ID} --gid ${GROUP_ID} ${NAME}
